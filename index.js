@@ -20,7 +20,7 @@ bot.on('ready', () => {
 
 bot.on('message', message => {
 
-  let args = message.content('thot'){
+  if(message.content === 'thot'){
     message.channel.send('https://imgur.com/a/SzwP8tb');
   };
 

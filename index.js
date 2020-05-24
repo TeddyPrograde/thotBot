@@ -32,6 +32,16 @@ bot.on('message', message => {
     break;
 
   }
-});
+}
+
+{
+
+  let args = message.content("thot"){
+
+    message.channel.send('https://imgur.com/a/SzwP8tb');
+
+  };
+}
+);
 
 bot.login(token);

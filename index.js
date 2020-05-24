@@ -20,7 +20,7 @@ bot.on('ready', () => {
 
 bot.on('message', message => {
 
-  if message.content('thot'){
+  if Discord.message.content('thot'){
     message.channel.send('https://imgur.com/a/SzwP8tb');
   };
 

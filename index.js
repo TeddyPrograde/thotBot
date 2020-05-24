@@ -24,7 +24,7 @@ bot.on('message', message => {
   switch (args[0]) {
 
     case "ping":
-      message.channel.send('pong');
+      bot.commands.get('ping').execute(message, args);
     break;
 
   }

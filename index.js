@@ -19,6 +19,11 @@ bot.on('ready', () => {
 });
 
 bot.on('message', message => {
+
+  if message.content('thot'){
+    message.channel.send('https://imgur.com/a/SzwP8tb');
+  };
+
   let args = message.content.substring(PREFIX.length).split(" ");
 
   switch (args[0]) {

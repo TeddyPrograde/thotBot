@@ -5,7 +5,7 @@ const bot = new Discord.Client();
 const token = (process.env.TOKEN);
 
 bot.on('ready', () => {
-  console.log('thotBot initiating...');
+  console.log('thotBot started');
 })
 
 bot.login(token);

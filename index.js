@@ -40,12 +40,11 @@ bot.on('message', message => {
   //Easy Access Thottery
   if(message.content === 'thot'){
     message.channel.send('https://imgur.com/a/SzwP8tb');
-    }
+  }
+
   if(message.content === 'mega thot'){
     message.channel.send('https://imgur.com/a/UzsIeLU');
-    }
-
-  };
+  }
 });
 
 bot.login(token);

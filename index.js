@@ -27,6 +27,10 @@ bot.on('message', message => {
   let args = message.content.substring(PREFIX.length).split(" ");
   switch (args[0]) {
 
+    case "help":
+      bot.commands.get('help').execute(message, args);
+    break;
+
     case "ping":
       bot.commands.get('ping').execute(message, args);
     break;
@@ -36,6 +40,9 @@ bot.on('message', message => {
   //Easy Access Thottery
   if(message.content === 'thot'){
     message.channel.send('https://imgur.com/a/SzwP8tb');
+
+  if(message.content === 'mega thot'){
+    message.channel.send('https://imgur.com/a/UzsIeLU');
 
   };
 });

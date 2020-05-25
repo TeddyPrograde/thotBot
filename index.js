@@ -18,7 +18,6 @@ for(const file of commandFiles){
 //Bot startup message & status
 bot.on('ready', () => {
   console.log('thotBot started');
-  bot.user.setStatus('idle');
   bot.user.setActivity('for commands | v!help', {type: 'WATCHING'});
 });
 

@@ -5,7 +5,7 @@ module.exports = {
   description: 'shows all commands',
   execute(message, args){
 
-    const embed = new Discord.RichEmbed()
+    const embed = new Discord.MessageEmbed()
     .setTitle('Help')
     .addField('ping', 'Pings thotBot')
     .setColor(0xff2a68)

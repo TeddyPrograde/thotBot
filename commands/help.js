@@ -7,7 +7,7 @@ module.exports = {
 
     const embed = new Discord.MessageEmbed()
     .setTitle('Help')
-    .addField('ping', 'Pog!')
+    .addField('ping', 'Pings and checks latency of the bot')
     .setColor(0xff2a68)
     message.channel.send(embed);
 

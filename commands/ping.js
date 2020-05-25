@@ -1,6 +1,8 @@
+const Discord = require('discord.js');
+
 module.exports = {
   name: 'ping',
-  description: 'Pings and checks latency of the bot',
+  description: 'Pings the bot',
   execute(message, args){
 
     const embed = new Discord.MessageEmbed()

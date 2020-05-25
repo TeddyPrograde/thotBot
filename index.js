@@ -2,7 +2,7 @@ require('dotenv');
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 const token = (process.env.TOKEN);
-const PREFIX = "v!"
+const PREFIX = 'v!'
 
 //Command Handler
 const fs = require ('fs');

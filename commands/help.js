@@ -7,7 +7,7 @@ module.exports = {
 
     const embed = new Discord.MessageEmbed()
     .setTitle('Help')
-    .addField('ping', 'Pings thotBot')
+    .addField('ping', 'Pog!')
     .setColor(0xff2a68)
     message.channel.send(embed);
 

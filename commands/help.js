@@ -9,7 +9,7 @@ module.exports = {
     .setTitle('Help')
     .addField('ping', 'Pings thotBot')
     .setColor(0xff2a68)
-    message.channel.sendEmbed(embed);
+    message.channel.send(embed);
 
   }
 }

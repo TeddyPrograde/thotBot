@@ -28,10 +28,6 @@ bot.on('message', message => {
       bot.commands.get('ping').execute(message, args);
     break;
 
-    case "thot":
-      bot.commands.get('thot').execute(message, args);
-    break;
-
   }
 
   if(message.content === 'thot'){

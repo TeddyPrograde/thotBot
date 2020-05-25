@@ -18,6 +18,7 @@ for(const file of commandFiles){
 //Bot startup message & status
 bot.on('ready', () => {
   console.log('thotBot started');
+  bot.user.setActivity('hentai', {type: 'WATCHING'}).catch(console.error);
 });
 
 //Commands

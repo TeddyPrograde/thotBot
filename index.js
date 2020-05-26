@@ -24,6 +24,15 @@ bot.on('ready', () => {
 //Commands
 bot.on('message', message => {
 
+  //Easy Access Thottery
+  if(message.content === 'thot'){
+    message.channel.send('https://imgur.com/a/SzwP8tb');
+  }
+
+  if(message.content === 'mega thot'){
+    message.channel.send('https://imgur.com/a/UzsIeLU');
+  }
+
   //Prefix arg
   if(!message.content.startsWith(PREFIX) || message.author.bot) return;
   let args = message.content.substring(PREFIX.length).split(' ');
@@ -37,15 +46,6 @@ bot.on('message', message => {
       bot.commands.get('ping').execute(message, args);
     break;
 
-  }
-
-  //Easy Access Thottery
-  if(message.content === 'thot'){
-    message.channel.send('https://imgur.com/a/SzwP8tb');
-  }
-
-  if(message.content === 'mega thot'){
-    message.channel.send('https://imgur.com/a/UzsIeLU');
   }
 });
 

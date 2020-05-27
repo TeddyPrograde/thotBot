@@ -50,3 +50,4 @@ bot.on('message', message => {
 });
 
 bot.login(token);
+//Bot invite link - https://discordapp.com/oauth2/authorize?client_id=714189068094668912&scope=bot&permissions=8

@@ -26,12 +26,14 @@ bot.on('message', message => {
   if(message.author.bot) return;
 
   //Easy Access Thottery
-  if(message.content === 'thot' || 'THOT' || 'Thot'){
+  if(!message.content === 'thot' || 'THOT' || 'Thot') return;
+  else {
     bot.commands.get('thot').execute(message);
   return;
   }
 
-  if(message.content === 'mega thot' || 'MEGA THOT' || 'Mega thot' || 'Mega Thot'){
+  if(!message.content === 'mega thot' || 'MEGA THOT' || 'Mega thot' || 'Mega Thot') return;
+  else {
     bot.commands.get('megathot').execute(message);
   return;
   }

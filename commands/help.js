@@ -7,7 +7,7 @@ module.exports = {
 
     const embed = new Discord.MessageEmbed()
     .setColor(0xff2a68)
-    .setAuthor('thotBot', 'https://imgur.com/a/9enmEtA')
+    .setAuthor('thotBot', 'https://imgur.com/CB81zbW.jpg')
     .setTitle('Commands')
     .addField('ping', 'Pings the bot')
     .setTimestamp()

@@ -6,8 +6,10 @@ module.exports = {
   execute(message, args){
 
     const embed = new Discord.MessageEmbed()
-    .addField('Pong!')
+    .addDescription('Pong!')
     .setColor(0xff2a68)
+    .setTimestamp()
+    .setFooter(message.member.user.tag)
     message.channel.send(embed);
 
   }

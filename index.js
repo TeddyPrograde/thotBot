@@ -23,7 +23,7 @@ bot.on('ready', () => {
 
 //Commands
 bot.on('message', message => {
-  if(message.authot.bot) return;
+  if(message.author.bot) return;
 
   //Easy Access Thottery
   if(message.content === 'thot' || 'THOT' || 'Thot'){

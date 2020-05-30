@@ -6,9 +6,12 @@ module.exports = {
   execute(message, args){
 
     const embed = new Discord.MessageEmbed()
+    .setColor(0xff2a68)
+    .setAuthor('thotBot', 'https://imgur.com/a/9enmEtA')
     .setTitle('Commands')
     .addField('ping', 'Pings the bot')
-    .setColor(0xff2a68)
+    .setTimestamp()
+    .setFooter(message.member.user.tag)
     message.channel.send(embed);
 
   }

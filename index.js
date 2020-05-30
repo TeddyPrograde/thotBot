@@ -28,13 +28,11 @@ bot.on('message', message => {
   //Easy Access Thottery
   if(message.content === 'thot' || 'THOT' || 'Thot'){
     bot.commands.get('thot').execute(message);
-  return;
-  }
+  } return;
 
   if(!message.content === 'mega thot' || 'MEGA THOT' || 'Mega thot' || 'Mega Thot'){
     bot.commands.get('megathot').execute(message);
-  return;
-  }
+  } return;
 
   //Prefix arg
   if(!message.content.startsWith(PREFIX)) return;

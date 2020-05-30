@@ -26,11 +26,11 @@ bot.on('message', message => {
 
   //Easy Access Thottery
   if(message.content === 'thot'){
-    message.channel.send('https://imgur.com/a/SzwP8tb');
+    bot.commands.get('thot').execute(message, args);
   }
 
   if(message.content === 'mega thot'){
-    message.channel.send('https://imgur.com/a/UzsIeLU');
+    bot.commands.get('megathot').execute(message, args);
   }
 
   //Prefix arg

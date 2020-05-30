@@ -23,18 +23,19 @@ bot.on('ready', () => {
 
 //Commands
 bot.on('message', message => {
+  if(message.authot.bot) return;
 
   //Easy Access Thottery
-  if(message.content === 'thot'){
+  if(message.content === 'thot' || 'THOT' || 'Thot'){
     bot.commands.get('thot').execute(message);
   }
 
-  if(message.content === 'mega thot'){
+  if(message.content === 'mega thot' || 'MEGA THOT' || 'Mega thot' || 'Mega Thot'){
     bot.commands.get('megathot').execute(message);
   }
 
   //Prefix arg
-  if(!message.content.startsWith(PREFIX) || message.author.bot) return;
+  if(!message.content.startsWith(PREFIX)) return;
   let args = message.content.substring(PREFIX.length).split(' ');
   switch (args[0]) {
 

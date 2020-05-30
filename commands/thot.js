@@ -7,7 +7,7 @@ module.exports = {
 
     const embed = new Discord.MessageEmbed()
     .setColor(0xff2a68)
-    .setTitle(':rotating_light: Thot Detected')
+    .setTitle(':rotating_light: Thot Detected :rotating_light:')
     .setImage('https://imgur.com/LFoco6g.jpg')
     .setTimestamp()
     .setFooter(message.member.user.tag)

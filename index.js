@@ -26,16 +26,12 @@ bot.on('message', message => {
   if(message.author.bot) return;
 
   //Easy Access Thottery
-  if(!message.content === 'thot' || 'THOT' || 'Thot') return;
-  else {
+  if(message.content === 'thot' || 'THOT' || 'Thot'){
     bot.commands.get('thot').execute(message);
-  return;
   }
 
-  if(!message.content === 'mega thot' || 'MEGA THOT' || 'Mega thot' || 'Mega Thot') return;
-  else {
+  if(!message.content === 'mega thot' || 'MEGA THOT' || 'Mega thot' || 'Mega Thot'){
     bot.commands.get('megathot').execute(message);
-  return;
   }
 
   //Prefix arg

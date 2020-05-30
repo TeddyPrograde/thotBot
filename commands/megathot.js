@@ -7,7 +7,10 @@ module.exports = {
 
     const embed = new Discord.MessageEmbed()
     .setColor(0xff2a68)
+    .setTitle(':rotating_light: Thot Detected')
     .setImage('https://imgur.com/4mjc1fX.jpg')
+    .setTimestamp()
+    .setFooter(message.member.user.tag)
     message.channel.send(embed);
 
   }

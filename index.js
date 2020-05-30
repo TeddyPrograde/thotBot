@@ -26,11 +26,11 @@ bot.on('message', message => {
 
   //Easy Access Thottery
   if(message.content === 'thot'){
-    bot.commands.get('thot').execute(message, args);
+    bot.commands.get('thot').execute(message);
   }
 
   if(message.content === 'mega thot'){
-    bot.commands.get('megathot').execute(message, args);
+    bot.commands.get('megathot').execute(message);
   }
 
   //Prefix arg

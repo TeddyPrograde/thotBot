@@ -3,7 +3,7 @@ const Discord = require('discord.js');
 module.exports = {
   name: 'thot',
   description: 'Sends thot image (no prefix required)',
-  execute(message, args){
+  execute(message){
 
     const embed = new Discord.MessageEmbed()
     .setColor(0xff2a68)

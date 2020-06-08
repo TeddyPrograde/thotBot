@@ -16,8 +16,8 @@ module.exports = {
     randomPuppy(subreddit)
       .then(url => {
         const embed = new Discord.MessageEmbed()
-        .setImage(url)
-        .setVideo(url)
+        .image(url)
+        .video(url)
         .setColor(0xff2a68)
         .setTimestamp()
         .setFooter(message.member.user.tag)

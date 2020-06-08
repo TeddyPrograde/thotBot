@@ -14,12 +14,15 @@ module.exports = {
     let subreddit = reddit[Math.floor(Math.random() * reddit.length)];
 
     const event = randomPuppy.all(subreddit);
+    event.on('data', url => {
 
     const embed = new Discord.MessageEmbed()
-    event.on('data', url => .setImage(url, ".png"))
+    .setImage(url)
     .setColor(0xff2a68)
     .setTimestamp()
     .setFooter(message.member.user.tag)
     message.channel.send(embed);
+
+    })
   }
 }

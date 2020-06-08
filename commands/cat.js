@@ -7,7 +7,7 @@ module.exports = {
   execute(message, args){
 
     let reddit = [
-      "cats",
+      "catsvstechnology",
       "catbellies"
     ]
 

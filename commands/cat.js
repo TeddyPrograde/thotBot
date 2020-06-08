@@ -15,7 +15,7 @@ module.exports = {
 
     const event = randomPuppy.all(subreddit);
     event.on('data', url => { const catURL = (url)
-      var embed = new Discord.MessageEmbed()
+      const embed = new Discord.MessageEmbed()
       .setImage(catURL)
       .setColor(0xff2a68)
       .setTimestamp()

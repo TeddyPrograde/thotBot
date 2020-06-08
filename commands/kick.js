@@ -18,11 +18,7 @@ module.exports = {
           message.reply('An error has occured, please try again');
           console.log(err);
         });
-      } else{
-        message.reply("This user is not in the server")
       }
-    } else{
-      message.reply("This user is not in the server")
     }
   }
 }

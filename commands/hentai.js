@@ -2,15 +2,15 @@ const Discord = require('discord.js');
 const randomPuppy = require('random-puppy');
 
 module.exports = {
-  name: 'cat',
-  description: 'Grabs random cat content',
+  name: 'hentai',
+  description: 'Grabs random hentai content',
   execute(message, args){
 
     let reddit = [
-      "catsvstechnology",
-      "catbellies",
-      "cats",
-      "thecatdimension"
+      "hentai",
+      "Hentai4Everyone",
+      "doujinshi",
+      "HentaiAnime"
     ]
 
     let subreddit = reddit[Math.floor(Math.random() * reddit.length)];

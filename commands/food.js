@@ -2,15 +2,13 @@ const Discord = require('discord.js');
 const randomPuppy = require('random-puppy');
 
 module.exports = {
-  name: 'cat',
-  description: 'Grabs random cat content',
+  name: 'food',
+  description: 'Grabs random food content',
   execute(message, args){
 
     let reddit = [
-      "catsvstechnology",
-      "catbellies",
-      "cats",
-      "thecatdimension"
+      "food",
+      "FoodPorn"
     ]
 
     let subreddit = reddit[Math.floor(Math.random() * reddit.length)];

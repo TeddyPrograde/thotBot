@@ -16,7 +16,7 @@ module.exports = {
     const event = randomPuppy.all(subreddit);
 
     const embed = new Discord.MessageEmbed()
-    .setImage(randomPuppy.all(subreddit)
+    .setImage(randomPuppy(subreddit)
       .then(url =>{
         (url);
       }))

@@ -21,11 +21,14 @@ bot.on('ready', () => {
   bot.user.setActivity('for commands | v!help', {type: 'WATCHING'});
 });
 
-//Commands
+//Command Cooldown
+const usedCommandRecently = new Set();
+
+//Reads Message
 bot.on('message', message => {
   if(message.author.bot) return;
 
-  //Easy Access Thottery
+  //Non-prefixed Commands
   if(message.content === 'thot'){
     bot.commands.get('thot').execute(message);
   }
@@ -39,6 +42,20 @@ bot.on('message', message => {
   let args = message.content.substring(PREFIX.length).split(' ');
   switch (args[0]) {
 
+    //Prefixed Commands
+    case "cooldown":
+      if(usedCommandRecently.has(message.author.id)){
+        message.reply("This command is on a cooldown");
+      } else{
+        message.reply("not on cooldown");
+
+        usedCommandRecently.add(message.author.id);
+        setTimeout(() =>{
+          usedCommandRecently.delete(message.author.id)
+        }, 5000)
+      }
+    break;
+
     case "help":
       bot.commands.get('help').execute(message, args);
     break;
@@ -51,4 +68,3 @@ bot.on('message', message => {
 });
 
 bot.login(token);
-//dumbass

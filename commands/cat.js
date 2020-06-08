@@ -17,6 +17,7 @@ module.exports = {
       .then(url => {
         const embed = new Discord.MessageEmbed()
         .setImage(url)
+        .setVideo(url)
         .setColor(0xff2a68)
         .setTimestamp()
         .setFooter(message.member.user.tag)

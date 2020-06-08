@@ -15,7 +15,7 @@ module.exports = {
 
     randomPuppy(subreddit)
       .then(url => {
-        const embed = new Discord.MessageEmbed()
+        const embed = new Discord.MessageEmbedLink()
         .setURL(url)
         .setColor(0xff2a68)
         .setTimestamp()

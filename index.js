@@ -30,7 +30,16 @@ bot.on('message', message => {
 
   //Non-prefixed Commands
   if(message.content === 'thot'){
-    bot.commands.get('thot').execute(message);
+    if(usedCommandRecently.has(message.author.id)){
+      message.reply("This command is on a cooldown");
+    } else{
+      bot.commands.get('thot').execute(message);
+
+      usedCommandRecently.add(message.author.id);
+      setTimeout(() =>{
+        usedCommandRecently.delete(message.author.id)
+      }, 5000)
+    }
   }
 
   if(message.content === 'mega thot'){
@@ -47,7 +56,7 @@ bot.on('message', message => {
       if(usedCommandRecently.has(message.author.id)){
         message.reply("This command is on a cooldown");
       } else{
-        message.reply("not on cooldown");
+        //command
 
         usedCommandRecently.add(message.author.id);
         setTimeout(() =>{

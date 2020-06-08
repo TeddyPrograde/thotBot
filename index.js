@@ -31,19 +31,28 @@ bot.on('message', message => {
   //Non-prefixed Commands
   if(message.content === 'thot'){
     if(usedCommandRecently.has(message.author.id)){
-      message.reply("This command is on a cooldown");
+      message.reply("you may call out the thottery again in 15s");
     } else{
       bot.commands.get('thot').execute(message);
 
       usedCommandRecently.add(message.author.id);
       setTimeout(() =>{
         usedCommandRecently.delete(message.author.id)
-      }, 5000)
+      }, 15000)
     }
   }
 
   if(message.content === 'mega thot'){
-    bot.commands.get('megathot').execute(message);
+    if(usedCommandRecently.has(message.author.id)){
+      message.reply("you may call out the mega thottery again in 30s");
+    } else{
+      bot.commands.get('megathot').execute(message);
+
+      usedCommandRecently.add(message.author.id);
+      setTimeout(() =>{
+        usedCommandRecently.delete(message.author.id)
+      }, 30000)
+    }
   }
 
   //Prefix check
@@ -66,11 +75,29 @@ bot.on('message', message => {
     break;
 
     case "help":
-      bot.commands.get('help').execute(message, args);
+      if(usedCommandRecently.has(message.author.id)){
+        message.reply("please wait 5s before using this command again");
+      } else{
+        bot.commands.get('help').execute(message, args);
+
+        usedCommandRecently.add(message.author.id);
+        setTimeout(() =>{
+          usedCommandRecently.delete(message.author.id)
+        }, 5000)
+      }
     break;
 
     case "ping":
-      bot.commands.get('ping').execute(message, args);
+      if(usedCommandRecently.has(message.author.id)){
+        message.reply("please wait 30s before using this command again");
+      } else{
+        bot.commands.get('ping').execute(message, args);
+
+        usedCommandRecently.add(message.author.id);
+        setTimeout(() =>{
+          usedCommandRecently.delete(message.author.id)
+        }, 30000)
+      }
     break;
 
   }

@@ -14,16 +14,13 @@ module.exports = {
     let subreddit = reddit[Math.floor(Math.random() * reddit.length)];
 
     const event = randomPuppy.all(subreddit);
-
-    const embed = new Discord.MessageEmbed()
-    .setImage(randomPuppy(subreddit)
-      .then(url =>{
-        (url);
-      }))
-    .setColor(0xff2a68)
-    .setTimestamp()
-    .setFooter(message.member.user.tag)
-    message.channel.send(embed);
-
+    event.on('data', url =>{
+      const embed = new Discord.MessageEmbed()
+      .setImage(url)
+      .setColor(0xff2a68)
+      .setTimestamp()
+      .setFooter(message.member.user.tag)
+      message.channel.send(embed);
+    });
   }
 }

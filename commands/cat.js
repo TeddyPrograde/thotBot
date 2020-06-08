@@ -4,7 +4,7 @@ const randomPuppy = require('random-puppy');
 module.exports = {
   name: 'cat',
   description: 'Grabs random cat picture',
-  execute(message, args){
+  execute async (message, args){
 
     let reddit = [
       "cats",

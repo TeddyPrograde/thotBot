@@ -21,9 +21,6 @@ bot.on('ready', () => {
   bot.user.setActivity('for commands | v!help', {type: 'WATCHING'});
 });
 
-//Command Cooldown
-const usedCommandsRecently = new Set();
-
 //Reads Message
 bot.on('message', message => {
   if(message.author.bot) return;
@@ -43,19 +40,6 @@ bot.on('message', message => {
   switch (args[0]) {
 
     //Prefixed Commands
-    case "cooldown":
-      if(usedCommandsRecently.has(message.author.id)){
-        message.reply("This command is on a cooldown");
-      } else{
-        //command
-
-        usedCommandsRecently.add(message.author.id);
-        setTimeout(() =>{
-          usedCommandsRecently.delete(message.author.id)
-        }, 5000)
-      }
-    break;
-
     case "help":
       bot.commands.get('help').execute(message, args);
     break;
@@ -63,8 +47,6 @@ bot.on('message', message => {
     case "ping":
       bot.commands.get('ping').execute(message, args);
     break;
-
   }
 });
-
 bot.login(token);

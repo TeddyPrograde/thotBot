@@ -22,7 +22,7 @@ bot.on('ready', () => {
 });
 
 //Command Cooldown
-const usedCommandRecently = new Set();
+const usedCommandsRecently = new Set();
 
 //Reads Message
 bot.on('message', message => {
@@ -30,29 +30,11 @@ bot.on('message', message => {
 
   //Non-prefixed Commands
   if(message.content === 'thot'){
-    if(usedCommandRecently.has(message.author.id)){
-      message.reply("you may call out the thottery again in 15s");
-    } else{
       bot.commands.get('thot').execute(message);
-
-      usedCommandRecently.add(message.author.id);
-      setTimeout(() =>{
-        usedCommandRecently.delete(message.author.id)
-      }, 15000)
-    }
   }
 
   if(message.content === 'mega thot'){
-    if(usedCommandRecently.has(message.author.id)){
-      message.reply("you may call out the mega thottery again in 30s");
-    } else{
-      bot.commands.get('megathot').execute(message);
-
-      usedCommandRecently.add(message.author.id);
-      setTimeout(() =>{
-        usedCommandRecently.delete(message.author.id)
-      }, 30000)
-    }
+    bot.commands.get('megathot').execute(message);
   }
 
   //Prefix check
@@ -62,42 +44,24 @@ bot.on('message', message => {
 
     //Prefixed Commands
     case "cooldown":
-      if(usedCommandRecently.has(message.author.id)){
+      if(usedCommandsRecently.has(message.author.id)){
         message.reply("This command is on a cooldown");
       } else{
         //command
 
-        usedCommandRecently.add(message.author.id);
+        usedCommandsRecently.add(message.author.id);
         setTimeout(() =>{
-          usedCommandRecently.delete(message.author.id)
+          usedCommandsRecently.delete(message.author.id)
         }, 5000)
       }
     break;
 
     case "help":
-      if(usedCommandRecently.has(message.author.id)){
-        message.reply("please wait 5s before using this command again");
-      } else{
-        bot.commands.get('help').execute(message, args);
-
-        usedCommandRecently.add(message.author.id);
-        setTimeout(() =>{
-          usedCommandRecently.delete(message.author.id)
-        }, 5000)
-      }
+      bot.commands.get('help').execute(message, args);
     break;
 
     case "ping":
-      if(usedCommandRecently.has(message.author.id)){
-        message.reply("please wait 30s before using this command again");
-      } else{
-        bot.commands.get('ping').execute(message, args);
-
-        usedCommandRecently.add(message.author.id);
-        setTimeout(() =>{
-          usedCommandRecently.delete(message.author.id)
-        }, 30000)
-      }
+      bot.commands.get('ping').execute(message, args);
     break;
 
   }

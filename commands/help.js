@@ -23,33 +23,11 @@ module.exports = {
     const embed2 = new Discord.MessageEmbed()
     .setColor(0xff2a68)
     .setAuthor('thotBot', 'https://imgur.com/CB81zbW.jpg')
-    .setTitle('NSFW | Must be in NSFW enabled channel')
-    .addField('anal', 'Gets random anal content')
-    .addField('ass', 'Shows a nice booty')
-    .addField('bdsm', 'Gets random BDSM content')
-    .addField('blowjob', 'Gets random blowjob content')
-    .addField('boobs', 'Shows some nice titties')
-    .addField('dick', 'Shows a nice cock')
-    .addField('gay', 'Gets random gay content')
-    .addField('girl', 'Shows a sexy lady')
-    .addField('guy', 'Shows a sexy man')
-    .addField('hentai', 'Gets random hentai content')
-    .addField('lesbian', 'Gets random lesbian content')
-    .addField('pussy', 'Shows some nice coochie')
-    .addField('r34', 'Gets random rule 34 content')
-    .addField('sex', 'Gets random NSFW content')
-    .setTimestamp()
-    .setFooter(message.member.user.tag)
-    message.channel.send(embed2);
-
-    const embed3 = new Discord.MessageEmbed()
-    .setColor(0xff2a68)
-    .setAuthor('thotBot', 'https://imgur.com/CB81zbW.jpg')
     .setTitle('Moderation | Must have permissions')
     .addField('kick', 'Kicks mentioned user')
     .setTimestamp()
     .setFooter(message.member.user.tag)
-    message.channel.send(embed3);
+    message.channel.send(embed2);
 
   }
 }

@@ -72,69 +72,62 @@ bot.on('message', message => {
       bot.commands.get('ping').execute(message, args);
     break;
 
-    //NSFW Check
-    if(message.channel.nsfw === false){
-      message.channel.send("This channel does now allow NSFW content")
-    } else {
+    //NSFW Commands
+    case "anal":
+      bot.commands.get('anal').execute(message, args);
+    break;
 
-      //NSFW Commands
-      case "anal":
-        bot.commands.get('anal').execute(message, args);
-      break;
+    case "ass":
+      bot.commands.get('ass').execute(message, args);
+    break;
 
-      case "ass":
-        bot.commands.get('ass').execute(message, args);
-      break;
+    case "bdsm":
+      bot.commands.get('bdsm').execute(message, args);
+    break;
 
-      case "bdsm":
-        bot.commands.get('bdsm').execute(message, args);
-      break;
+    case "blowjob":
+      bot.commands.get('blowjob').execute(message, args);
+    break;
 
-      case "blowjob":
-        bot.commands.get('blowjob').execute(message, args);
-      break;
+    case "boobs":
+      bot.commands.get('boobs').execute(message, args);
+    break;
 
-      case "boobs":
-        bot.commands.get('boobs').execute(message, args);
-      break;
+    case "dick":
+      bot.commands.get('dick').execute(message, args);
+    break;
 
-      case "dick":
-        bot.commands.get('dick').execute(message, args);
-      break;
+    case "gay":
+      bot.commands.get('gay').execute(message, args);
+    break;
 
-      case "gay":
-        bot.commands.get('gay').execute(message, args);
-      break;
+    case "girl":
+      bot.commands.get('girl').execute(message, args);
+    break;
 
-      case "girl":
-        bot.commands.get('girl').execute(message, args);
-      break;
+    case "guy":
+      bot.commands.get('guy').execute(message, args);
+    break;
 
-      case "guy":
-        bot.commands.get('guy').execute(message, args);
-      break;
+    case "hentai":
+      bot.commands.get('hentai').execute(message, args);
+    break;
 
-      case "hentai":
-        bot.commands.get('hentai').execute(message, args);
-      break;
+    case "lesbian":
+      bot.commands.get('lesbian').execute(message, args);
+    break;
 
-      case "lesbian":
-        bot.commands.get('lesbian').execute(message, args);
-      break;
+    case "pussy":
+      bot.commands.get('pussy').execute(message, args);
+    break;
 
-      case "pussy":
-        bot.commands.get('pussy').execute(message, args);
-      break;
+    case "r34":
+      bot.commands.get('r34').execute(message, args);
+    break;
 
-      case "r34":
-        bot.commands.get('r34').execute(message, args);
-      break;
-
-      case "sex":
-        bot.commands.get('sex').execute(message, args);
-      break;
-
-    }
+    case "sex":
+      bot.commands.get('sex').execute(message, args);
+    break;
 
     //Moderation Commands
     case "kick":

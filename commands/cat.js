@@ -16,7 +16,10 @@ module.exports = {
     const event = randomPuppy.all(subreddit);
 
     const embed = new Discord.MessageEmbed()
-    .setImage(event.on('data', url => (url)).catch(console.error()))
+    .setImage(randomPuppy.all(subreddit)
+      .then(url =>{
+        (url);
+      }))
     .setColor(0xff2a68)
     .setTimestamp()
     .setFooter(message.member.user.tag)

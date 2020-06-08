@@ -72,7 +72,6 @@ bot.on('message', message => {
       bot.commands.get('ping').execute(message, args);
     break;
 
-
     //NSFW Check
     if(message.channel.nsfw === false){
       message.channel.send("This channel does now allow NSFW content")

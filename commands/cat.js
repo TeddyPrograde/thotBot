@@ -14,10 +14,9 @@ module.exports = {
     let subreddit = reddit[Math.floor(Math.random() * reddit.length)];
 
     const event = randomPuppy.all(subreddit);
-    event.on('data', url => )
 
     const embed = new Discord.MessageEmbed()
-    .setImage(url)
+    event.on('data', url => .setImage(url, ".png"))
     .setColor(0xff2a68)
     .setTimestamp()
     .setFooter(message.member.user.tag)

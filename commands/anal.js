@@ -5,6 +5,7 @@ module.exports = {
   name: 'anal',
   description: 'Grabs random anal content',
   execute(message, args){
+
     if(message.channel.nsfw === false){
       message.channel.send("This channel does now allow NSFW content")
       return;
@@ -31,6 +32,6 @@ module.exports = {
           .setTimestamp()
           .setFooter(message.member.user.tag)
           message.channel.send(embed);
-    )}
+    })}
   }
 }

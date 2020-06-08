@@ -14,7 +14,7 @@ module.exports = {
     let subreddit = reddit[Math.floor(Math.random() * reddit.length)];
 
     const event = randomPuppy.all(subreddit);
-    event.on('data', url => {
+    event.on({}
 
     const embed = new Discord.MessageEmbed()
     .setImage(url)
@@ -23,6 +23,6 @@ module.exports = {
     .setFooter(message.member.user.tag)
     message.channel.send(embed);
 
-    })
+   )
   }
 }

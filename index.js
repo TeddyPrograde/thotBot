@@ -47,6 +47,23 @@ bot.on('message', message => {
     case "ping":
       bot.commands.get('ping').execute(message, args);
     break;
+
+    case "dog":
+      bot.commands.get('dog').execute(message, args);
+    break;
+
+    case "cat":
+      bot.commands.get('cat').execute(message, args);
+    break;
+
+    case "meme":
+      bot.commands.get('meme').execute(message, args);
+    break;
+
+    //Moderation
+    case "kick":
+      bot.commands.get('kick').execute(message, args);
+    break;
   }
 });
 bot.login(token);

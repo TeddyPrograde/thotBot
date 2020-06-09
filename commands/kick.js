@@ -18,6 +18,8 @@ module.exports = {
           message.reply('An error has occured, please try again');
           console.log(err);
         });
+      } else {
+        message.channel.send('This user is not in the server')
       }
     }
   }

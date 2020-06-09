@@ -5,6 +5,13 @@ module.exports = {
   description: 'Kicks mentioned user',
   execute(message, args){
 
+    if(!message.member.hasPermissions("KICK_MEMBERS")) {
+      const noPermissionsMessage = new Discord.MessageEmbed()
+      .setColor(0xf53838)
+      .setDescription('An error has occured, please try again')
+      message.channel.send(noPermissionsMessage);
+    } return;
+
     const user = message.mentions.users.first();
 
     if(user){

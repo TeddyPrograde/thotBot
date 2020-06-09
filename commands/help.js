@@ -30,6 +30,8 @@ module.exports = {
       .setTimestamp()
       .setFooter(message.member.user.tag)
       message.channel.send(embed2);
+    } else {
+      return;
     }
   }
 }

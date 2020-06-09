@@ -8,7 +8,7 @@ module.exports = {
     if(!message.member.permissions.has("KICK_MEMBERS")) {
       const noPermissionsMessage = new Discord.MessageEmbed()
       .setColor(0xf53838)
-      .setDescription('An error has occured, please try again')
+      .setDescription('You may not kick members')
       message.channel.send(noPermissionsMessage);
     } return;
 

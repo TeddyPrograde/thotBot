@@ -12,7 +12,7 @@ module.exports = {
 
       if(member){
         member.kick().then(() =>{
-          const successMessage = new Discord.MessageEmbed();
+          const successMessage = new Discord.MessageEmbed()
           .setColor(0x26ff64)
           .setDescription(`${user.tag} has been kicked`)
           .setTimestamp()
@@ -20,7 +20,7 @@ module.exports = {
           message.channel.send(successMessage);
 
         }).catch(err =>{
-          const errorMessage = new Discord.MessageEmbed();
+          const errorMessage = new Discord.MessageEmbed()
           .setColor(0xf53838)
           .setDescription('An error has occured, please try again')
           .setTimestamp()
@@ -29,7 +29,7 @@ module.exports = {
           console.log(err);
         });
       } else {
-        const noUserMessage = new Discord.MessageEmbed();
+        const noUserMessage = new Discord.MessageEmbed()
         .setColor(0xf2d027)
         .setDescription('This user is not in the server')
         .setTimestamp()
@@ -37,7 +37,7 @@ module.exports = {
         message.channel.send(noUserMessage);
       }
     } else {
-      const noMentionMessage = new Discord.MessageEmbed();
+      const noMentionMessage = new Discord.MessageEmbed()
       .setColor(0xf2d027)
       .setDescription('Please mention who you want to kick')
       .setTimestamp()

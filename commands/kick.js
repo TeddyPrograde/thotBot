@@ -12,16 +12,37 @@ module.exports = {
 
       if(member){
         member.kick().then(() =>{
-          message.channel.send(`${user.tag} has been kicked`);
+          const successMessage = new Discord.MessageEmbed();
+          .setColor(0x26ff64)
+          .setDescription(`${user.tag} has been kicked`)
+          .setTimestamp()
+          .setFooter(message.member.user.tag)
+          message.channel.send(successMessage);
+
         }).catch(err =>{
-          message.reply('An error has occured, please try again');
+          const errorMessage = new Discord.MessageEmbed();
+          .setColor(0xf53838)
+          .setDescription('An error has occured, please try again')
+          .setTimestamp()
+          .setFooter(message.member.user.tag)
+          message.channel.send(errorMessage)
           console.log(err);
         });
       } else {
-        message.channel.send('This user is not in the server')
+        const noUserMessage = new Discord.MessageEmbed();
+        .setColor(0xf2d027)
+        .setDescription('This user is not in the server')
+        .setTimestamp()
+        .setFooter(message.member.user.tag)
+        message.channel.send(noUserMessage);
       }
     } else {
-      message.channel.send('Please mention who you want to kick')
+      const noMentionMessage = new Discord.MessageEmbed();
+      .setColor(0xf2d027)
+      .setDescription('Please mention who you want to kick')
+      .setTimestamp()
+      .setFooter(message.member.user.tag)
+      message.channel.send(noMentionMessage);
     }
   }
 }

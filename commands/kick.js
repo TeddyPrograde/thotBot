@@ -5,7 +5,7 @@ module.exports = {
   description: 'Kicks mentioned user',
   execute(message, args){
 
-    if(!message.member.hasPermissions("KICK_MEMBERS")) {
+    if(!message.member.permissions.has("KICK_MEMBERS")) {
       const noPermissionsMessage = new Discord.MessageEmbed()
       .setColor(0xf53838)
       .setDescription('An error has occured, please try again')

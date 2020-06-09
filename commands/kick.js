@@ -4,7 +4,6 @@ module.exports = {
   name: 'kick',
   description: 'Kicks mentioned user',
   execute(message, args){
-    if(!args[1]) message.channel.send('Please mention who you want to kick')
 
     const user = message.mentions.users.first();
 
@@ -21,6 +20,8 @@ module.exports = {
       } else {
         message.channel.send('This user is not in the server')
       }
+    } else {
+      message.channel.send('Please mention who you want to kick')
     }
   }
 }

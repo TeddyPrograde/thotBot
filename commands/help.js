@@ -20,7 +20,7 @@ module.exports = {
     .setFooter(message.member.user.tag)
     message.channel.send(embed);
 
-    if(!message.member.permissions.has("BAN_MEMBERS" || "KICK_MEMBERS")) {
+    if(message.member.permissions.has("BAN_MEMBERS" || "KICK_MEMBERS")) {
       const embed2 = new Discord.MessageEmbed()
       .setColor(0xff2a68)
       .setAuthor('thotBot', 'https://imgur.com/CB81zbW.jpg')

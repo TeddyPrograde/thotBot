@@ -73,6 +73,10 @@ bot.on('message', message => {
     break;
 
     //Moderation Commands
+    case "ban":
+      bot.commands.get('ban').execute(message, args);
+    break;
+
     case "kick":
       bot.commands.get('kick').execute(message, args);
     break;

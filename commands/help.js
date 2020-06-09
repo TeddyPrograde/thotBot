@@ -24,6 +24,7 @@ module.exports = {
     .setColor(0xff2a68)
     .setAuthor('thotBot', 'https://imgur.com/CB81zbW.jpg')
     .setTitle('Moderation | Must have permissions')
+    .addField('ban', 'Bans mentioned user')
     .addField('kick', 'Kicks mentioned user')
     .setTimestamp()
     .setFooter(message.member.user.tag)

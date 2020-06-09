@@ -22,9 +22,7 @@ module.exports = {
         }).catch(err =>{
           const errorMessage = new Discord.MessageEmbed()
           .setColor(0xf53838)
-          .setTitle('An error has occured, please try again')
-          .setTimestamp()
-          .setFooter(message.member.user.tag)
+          .setDescription('An error has occured, please try again')
           message.channel.send(errorMessage)
           console.log(err);
 
@@ -32,18 +30,14 @@ module.exports = {
       } else {
         const noUserMessage = new Discord.MessageEmbed()
         .setColor(0xf2d027)
-        .setTitle('This user is not in the server')
-        .setTimestamp()
-        .setFooter(message.member.user.tag)
+        .setDescription('This user is not in the server')
         message.channel.send(noUserMessage);
 
       }
     } else {
       const noMentionMessage = new Discord.MessageEmbed()
       .setColor(0xf2d027)
-      .setTitle('Please mention who you want to kick')
-      .setTimestamp()
-      .setFooter(message.member.user.tag)
+      .setDescription('Please mention who you want to kick')
       message.channel.send(noMentionMessage);
     }
   }

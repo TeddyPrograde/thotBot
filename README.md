@@ -1,4 +1,4 @@
-thotBot is a multi-functional Discord bot
+Atikus is a multi-functional Discord bot
 Owner/Dev - TeddyPrograde
 Dev - TMIMHD/Apollo
 

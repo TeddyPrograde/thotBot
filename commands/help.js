@@ -7,7 +7,7 @@ module.exports = {
 
     const embed = new Discord.MessageEmbed()
     .setColor(0x0b6bf0)
-    .setAuthor('Atikus', 'https://imgur.com/yNxVzXP.jpg')
+    .setAuthor('Atikus', 'https://imgur.com/P1zOIBn.png')
     .setTitle('Commands')
     .addField('animeme', 'Gets a random anime meme')
     .addField('bird', 'Shows random birb')
@@ -23,7 +23,7 @@ module.exports = {
     if(message.member.permissions.has("BAN_MEMBERS" || "KICK_MEMBERS")) {
       const embed2 = new Discord.MessageEmbed()
       .setColor(0x075be3)
-      .setAuthor('Atikus', 'https://imgur.com/yNxVzXP.jpg')
+      .setAuthor('Atikus', 'https://imgur.com/P1zOIBn.png')
       .setTitle('Moderation | Must have permissions')
       .addField('ban', 'Bans mentioned user')
       .addField('kick', 'Kicks mentioned user')

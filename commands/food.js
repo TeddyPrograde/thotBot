@@ -18,7 +18,7 @@ module.exports = {
         const embed = new Discord.MessageEmbed()
         .setURL(url)
         .setImage(url)
-        .setColor(0xff2a68)
+        .setColor(0x0b6bf0)
         .setTimestamp()
         .setFooter(message.member.user.tag)
         message.channel.send(embed);

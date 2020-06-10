@@ -22,7 +22,7 @@ module.exports = {
 
     if(message.member.permissions.has("BAN_MEMBERS" || "KICK_MEMBERS")) {
       const embed2 = new Discord.MessageEmbed()
-      .setColor(0x146be0)
+      .setColor(0x075be3)
       .setAuthor('Atikus', 'https://imgur.com/CB81zbW.jpg')
       .setTitle('Moderation | Must have permissions')
       .addField('ban', 'Bans mentioned user')

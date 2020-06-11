@@ -6,7 +6,7 @@ module.exports = {
   execute(message){
 
     const embed = new Discord.MessageEmbed()
-    .setColor(0x0b6bf0)
+    .setColor(0xed2d5d)
     .setTitle(':rotating_light: Mega Thot Detected :rotating_light:')
     .setImage('https://imgur.com/4mjc1fX.jpg')
     .setTimestamp()

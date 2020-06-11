@@ -7,7 +7,7 @@ module.exports = {
 
     const embed = new Discord.MessageEmbed()
     .setDescription('Pong!')
-    .setColor(0x0b6bf0)
+    .setColor(0xed2d5d)
     message.channel.send(embed);
 
   }

@@ -2,7 +2,7 @@ require('dotenv');
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 const token = (process.env.TOKEN);
-const PREFIX = "a!";
+const PREFIX = "v!";
 
 //Command Handler
 const fs = require ('fs');
@@ -17,8 +17,8 @@ for(const file of commandFiles){
 
 //Bot startup message & status
 bot.on('ready', () => {
-  console.log('Atikus started');
-  bot.user.setActivity('for commands | a!help', {type: 'WATCHING'});
+  console.log('thotBot online');
+  bot.user.setActivity('for commands | v!help', {type: 'WATCHING'});
 });
 
 //Reads Message

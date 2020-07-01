@@ -9,7 +9,6 @@ module.exports = {
     .setColor(0xed2d5d)
     .setAuthor('thotBot', 'https://imgur.com/GJYnfx0.jpg')
     .setTitle('Commands')
-    .addField('animeme', 'Gets a random anime meme')
     .addField('bird', 'Shows random birb')
     .addField('cat', 'Shows random kitty')
     .addField('dog', 'Shows random doggo')

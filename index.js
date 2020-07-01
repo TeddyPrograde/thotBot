@@ -40,10 +40,6 @@ bot.on('message', message => {
   switch (args[0]) {
 
     //Prefixed Commands
-    case "animeme":
-      bot.commands.get('animeme').execute(message, args);
-    break;
-
     case "bird":
       bot.commands.get('bird').execute(message, args);
     break;

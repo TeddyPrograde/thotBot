@@ -6,8 +6,8 @@ module.exports = {
   execute(message, args){
 
     const embed = new Discord.MessageEmbed()
-    .setColor(0xed2d5d)
-    .setAuthor('thotBot', 'https://imgur.com/GJYnfx0.jpg')
+    .setColor(0xf1bd25)
+    .setAuthor('Pooh', 'https://imgur.com/eRkZMXW.jpg')
     .setTitle('Commands')
     .addField('bird', 'Shows random birb')
     .addField('cat', 'Shows random kitty')
@@ -21,8 +21,8 @@ module.exports = {
 
     if(message.member.permissions.has("BAN_MEMBERS" || "KICK_MEMBERS")) {
       const embed2 = new Discord.MessageEmbed()
-      .setColor(0xedb529)
-      .setAuthor('thotBot', 'https://imgur.com/GJYnfx0.jpg')
+      .setColor(0xf1bd25)
+      .setAuthor('Pooh', 'https://imgur.com/eRkZMXW.jpg')
       .setTitle('Moderation | Must have permissions')
       .addField('ban', 'Bans mentioned user')
       .addField('kick', 'Kicks mentioned user')

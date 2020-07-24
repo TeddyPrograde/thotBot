@@ -2,7 +2,7 @@ require('dotenv');
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 const token = (process.env.TOKEN);
-const PREFIX = "v!";
+const PREFIX = "p!";
 
 //Command Handler
 const fs = require ('fs');
@@ -17,22 +17,13 @@ for(const file of commandFiles){
 
 //Bot startup message & status
 bot.on('ready', () => {
-  console.log('thotBot online');
-  bot.user.setActivity('for commands | v!help', {type: 'WATCHING'});
+  console.log('Pooh online');
+  bot.user.setActivity('for commands | p!help', {type: 'WATCHING'});
 });
 
 //Reads Message
 bot.on('message', message => {
   if(message.author.bot) return;
-
-  //Non-prefixed Commands
-  if(message.content === 'thot'){
-      bot.commands.get('thot').execute(message);
-  }
-
-  if(message.content === 'mega thot'){
-    bot.commands.get('megathot').execute(message);
-  }
 
   //Prefix check
   if(!message.content.startsWith(PREFIX)) return;

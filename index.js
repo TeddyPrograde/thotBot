@@ -25,6 +25,11 @@ bot.on('ready', () => {
 bot.on('message', message => {
   if(message.author.bot) return;
 
+  //Level role sync
+  if(message.member.roles.cache.get('736183221787689001')
+      message.member.roles.add('736192243022561341')
+    );
+
   //Prefix check
   if(!message.content.startsWith(PREFIX)) return;
   let args = message.content.substring(PREFIX.length).split(' ');

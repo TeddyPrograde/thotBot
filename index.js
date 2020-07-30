@@ -1,11 +1,11 @@
 require('dotenv');
-const fs = require ('fs');
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 const token = (process.env.TOKEN);
 const PREFIX = "p!";
 
-//Command Handler
+/* Old Command Handler
+const fs = require ('fs');
 bot.commands = new Discord.Collection();
 
 const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));
@@ -13,27 +13,30 @@ for(const file of commandFiles){
   const command = require(`./commands/${file}`);
 
   bot.commands.set(command.name, command);
-}
+}*/
 
-//Media Command Handler
-bot.mediaCommands = new Discord.Collection();
+//New Command Handler
+bot.commands = new Discord.Collection();
+bot.aliases = new Discord.Collection();
 
-const mediaCommandFiles = fs.readdirSync('./commands/media/').filter(file => file.endsWith('.js'));
-for(const mediaFile of mediaCommandFiles){
-  const mediaCommand = require(`./commands/media/${file}`);
+const modules = ['info', 'media', 'moderation'];
 
-  bot.mediaCommands.set(mediaCommand.name, mediaCommand);
-}
+const fs = require ('fs');
+modules.forEach(c => {
+  fs.readdir(`./commands/${c}/`, (err, files) => {
+    if (err) throw err;
+    console.log(`[Commandlogs] Loaded ${files.length} commands of module ${c}`);
 
-//Moderation Command Handler
-bot.moderationCommands = new Discord.Collection();
+    files.forEach(f => {
+      const props = require(`./commands/${c}/${f}`);
+      bot.commands.set(props.help.name, props);
 
-const moderationCommandFiles = fs.readdirSync('./commands/moderation/').filter(file => file.endsWith('.js'));
-for(const moderationFile of moderationCommandFiles){
-  const moderationCommand = require(`./commands/moderation/${file}`);
-
-  bot.moderationCommands.set(moderationCommand.name, moderationCommand);
-}
+      props.conf.aliases.forEach(alias => {
+        client.aliases.set(alias, props.name);
+      });
+    });
+  });
+});
 
 //Bot Startup & Status
 bot.on('ready', () => {
@@ -61,7 +64,7 @@ bot.on('message', message => {
 
     //Media Commands
     case "bird":
-      bot.mediaCommands.get('bird').execute(message, args);
+      bot.commands.get('bird').execute(message, args);
     break;
 
     case "cat":

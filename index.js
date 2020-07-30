@@ -41,7 +41,7 @@ bot.on('message', message => {
 
     //Media Commands
     case "bird":
-      bot.commands.get('./media/bird').execute(message, args);
+      bot.commands.get('bird').execute(message, args);
     break;
 
     case "cat":

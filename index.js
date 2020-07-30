@@ -31,7 +31,7 @@ modules.forEach(c => {
       const props = require(`./commands/${c}/${f}`);
       bot.commands.set(props.name, props);
 
-      props.conf.aliases.forEach(alias => {
+      props.aliases.forEach(alias => {
         client.aliases.set(alias, props.name);
       });
     });

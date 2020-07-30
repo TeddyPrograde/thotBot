@@ -8,7 +8,7 @@ const PREFIX = "p!";
 const fs = require ('fs');
 bot.commands = new Discord.Collection();
 
-const commandFiles = fs.readdirSync('./commands/'));
+const commandFiles = fs.readdirSync('./commands/');
 for(const file of commandFiles){
   const command = require(`./commands/${file}`);
 

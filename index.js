@@ -8,7 +8,7 @@ const PREFIX = "p!";
 const fs = require ('fs');
 bot.commands = new Discord.Collection();
 
-const commandFiles = fs.readdirSync('./commands/');
+const commandFiles = fs.readdirSync('./commands/'.filter(file => file.endsWith('.js')));
 for(const file of commandFiles){
   const command = require(`./commands/${file}`);
 
@@ -41,7 +41,7 @@ bot.on('message', message => {
 
     //Media Commands
     case "bird":
-      bot.commands.get('./media/bird.js').execute(message, args);
+      bot.commands.get('bird').execute(message, args);
     break;
 
     case "cat":

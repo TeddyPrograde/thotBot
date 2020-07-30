@@ -4,27 +4,16 @@ const bot = new Discord.Client();
 const token = (process.env.TOKEN);
 const PREFIX = "p!";
 
-/* Old Command Handler
-const fs = require ('fs');
+//Command Handler
 bot.commands = new Discord.Collection();
-
-const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));
-for(const file of commandFiles){
-  const command = require(`./commands/${file}`);
-
-  bot.commands.set(command.name, command);
-}*/
-
-//New Command Handler
-bot.commands = new Discord.Collection();
-
 const modules = ['info', 'media', 'moderation'];
 
-const fs = require ('fs');
+const fs = require ('fs'); //I am sorry for the atrosity that is to come 
 modules.forEach(c => {
   fs.readdir(`./commands/${c}/`, (err, files) => {
+
     if (err) throw err;
-    console.log(`[Commandlogs] Loaded ${files.length} commands of module ${c}`);
+    console.log(`Loaded ${files.length} commands from ${c}`);
 
     files.forEach(f => {
       const props = require(`./commands/${c}/${f}`);

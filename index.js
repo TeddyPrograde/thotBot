@@ -15,7 +15,7 @@ for(const file of commandFiles){
   bot.commands.set(command.name, command);
 }
 
-//Bot startup message & status
+//Bot Startup & Status
 bot.on('ready', () => {
   console.log('Pooh online');
   bot.user.setActivity('p!help', {type: 'WATCHING'});
@@ -25,47 +25,48 @@ bot.on('ready', () => {
 bot.on('message', message => {
   if(message.author.bot) return;
 
-  //Prefix check
+  //Prefix Check
   if(!message.content.startsWith(PREFIX)) return;
   let args = message.content.substring(PREFIX.length).split(' ');
   switch (args[0]) {
 
-    //Prefixed Commands
-    case "bird":
-      bot.commands.get('bird').execute(message, args);
-    break;
-
-    case "cat":
-      bot.commands.get('cat').execute(message, args);
-    break;
-
-    case "dog":
-      bot.commands.get('dog').execute(message, args);
-    break;
-
-    case "food":
-      bot.commands.get('food').execute(message, args);
-    break;
-
+    //Uncategorized Commands
     case "help":
       bot.commands.get('help').execute(message, args);
-    break;
-
-    case "meme":
-      bot.commands.get('meme').execute(message, args);
     break;
 
     case "ping":
       bot.commands.get('ping').execute(message, args);
     break;
 
+    //Media Commands
+    case "bird":
+      bot.commands.get('./media/bird').execute(message, args);
+    break;
+
+    case "cat":
+      bot.commands.get('./media/cat').execute(message, args);
+    break;
+
+    case "dog":
+      bot.commands.get('./media/dog').execute(message, args);
+    break;
+
+    case "food":
+      bot.commands.get('./media/food').execute(message, args);
+    break;
+
+    case "meme":
+      bot.commands.get('./media/meme').execute(message, args);
+    break;
+
     //Moderation Commands
     case "ban":
-      bot.commands.get('ban').execute(message, args);
+      bot.commands.get('./moderation/ban').execute(message, args);
     break;
 
     case "kick":
-      bot.commands.get('kick').execute(message, args);
+      bot.commands.get('./moderation/kick').execute(message, args);
     break;
   }
 });

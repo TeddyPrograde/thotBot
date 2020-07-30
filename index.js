@@ -17,7 +17,6 @@ for(const file of commandFiles){
 
 //New Command Handler
 bot.commands = new Discord.Collection();
-bot.aliases = new Discord.Collection();
 
 const modules = ['info', 'media', 'moderation'];
 
@@ -30,10 +29,6 @@ modules.forEach(c => {
     files.forEach(f => {
       const props = require(`./commands/${c}/${f}`);
       bot.commands.set(props.name, props);
-
-      props.aliases.forEach(alias => {
-        client.aliases.set(alias, props.name);
-      });
     });
   });
 });

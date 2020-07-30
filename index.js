@@ -18,7 +18,7 @@ for(const file of commandFiles){
 //Bot startup message & status
 bot.on('ready', () => {
   console.log('Pooh online');
-  bot.user.setActivity('for commands | p!help', {type: 'WATCHING'});
+  bot.user.setActivity('p!help', {type: 'WATCHING'});
 });
 
 //Reads Message

@@ -1,12 +1,32 @@
 require('dotenv');
+const fs = require ('fs');
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 const token = (process.env.TOKEN);
 const PREFIX = "p!";
 
 //Command Handler
-const fs = require ('fs');
 bot.commands = new Discord.Collection();
+
+const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));
+for(const file of commandFiles){
+  const command = require(`./commands/${file}`);
+
+  bot.commands.set(command.name, command);
+}
+
+//Media Command Handler
+bot.mediaCommands = new Discord.Collection();
+
+const mediaCommandFiles = fs.readdirSync('./commands/media/').filter(file => file.endsWith('.js'));
+for(const mediaFile of mediaCommandFiles){
+  const mediaCommand = require(`./commands/media/${file}`);
+
+  bot.mediaCommands.set(mediaCommand.name, mediaCommand);
+}
+
+//Moderation Command Handler
+bot.moderationCommands = new Discord.Collection();
 
 const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));
 for(const file of commandFiles){
@@ -41,7 +61,7 @@ bot.on('message', message => {
 
     //Media Commands
     case "bird":
-      bot.commands.get('bird').execute(message, args);
+      bot.mediaCommands.get('bird').execute(message, args);
     break;
 
     case "cat":

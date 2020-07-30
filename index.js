@@ -1,14 +1,14 @@
 require('dotenv');
+const fs = require ('fs');
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 const token = (process.env.TOKEN);
 const PREFIX = "p!";
+const modules = ['info', 'media', 'moderation'];
 
 //Command Handler
 bot.commands = new Discord.Collection();
-const modules = ['info', 'media', 'moderation'];
 
-const fs = require ('fs'); //I am sorry for the atrosity that is to come 
 modules.forEach(c => {
   fs.readdir(`./commands/${c}/`, (err, files) => {
 

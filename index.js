@@ -28,11 +28,11 @@ for(const mediaFile of mediaCommandFiles){
 //Moderation Command Handler
 bot.moderationCommands = new Discord.Collection();
 
-const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));
-for(const file of commandFiles){
-  const command = require(`./commands/${file}`);
+const moderationCommandFiles = fs.readdirSync('./commands/moderation/').filter(file => file.endsWith('.js'));
+for(const moderationFile of moderationCommandFiles){
+  const moderationCommand = require(`./commands/moderation/${file}`);
 
-  bot.commands.set(command.name, command);
+  bot.moderationCommands.set(moderationCommand.name, moderationCommand);
 }
 
 //Bot Startup & Status

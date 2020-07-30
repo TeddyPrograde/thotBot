@@ -29,7 +29,7 @@ modules.forEach(c => {
 
     files.forEach(f => {
       const props = require(`./commands/${c}/${f}`);
-      bot.commands.set(props.help.name, props);
+      bot.commands.set(props.name, props);
 
       props.conf.aliases.forEach(alias => {
         client.aliases.set(alias, props.name);

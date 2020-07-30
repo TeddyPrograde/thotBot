@@ -45,28 +45,28 @@ bot.on('message', message => {
     break;
 
     case "cat":
-      bot.commands.get('./media/cat').execute(message, args);
+      bot.commands.get('cat').execute(message, args);
     break;
 
     case "dog":
-      bot.commands.get('./media/dog').execute(message, args);
+      bot.commands.get('dog').execute(message, args);
     break;
 
     case "food":
-      bot.commands.get('./media/food').execute(message, args);
+      bot.commands.get('food').execute(message, args);
     break;
 
     case "meme":
-      bot.commands.get('./media/meme').execute(message, args);
+      bot.commands.get('meme').execute(message, args);
     break;
 
     //Moderation Commands
     case "ban":
-      bot.commands.get('./moderation/ban').execute(message, args);
+      bot.commands.get('ban').execute(message, args);
     break;
 
     case "kick":
-      bot.commands.get('./moderation/kick').execute(message, args);
+      bot.commands.get('kick').execute(message, args);
     break;
   }
 });
